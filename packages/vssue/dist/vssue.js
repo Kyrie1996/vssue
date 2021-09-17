@@ -1063,7 +1063,7 @@ var __vue_render__$8 = function () {var _vm=this;var _h=_vm.$createElement;var _
           ? _vm.vssue.$tc('comments', _vm.vssue.comments.count, {
               count: _vm.vssue.comments.count,
             })
-          : _vm.vssue.$tc('comments', 0))+"\n    ")])]),_vm._v(" "),_c('span',{staticClass:"vssue-header-powered-by"},[_c('span',[_vm._v("Powered by")]),_vm._v(" "),(_vm.vssue.API)?_c('span',[_c('a',{attrs:{"href":_vm.vssue.API.platform.link,"title":((_vm.vssue.API.platform.name) + " API " + (_vm.vssue.API.platform.version)),"target":"_blank","rel":"noopener noreferrer"}},[_vm._v("\n        "+_vm._s(_vm.vssue.API.platform.name)+"\n      ")]),_vm._v(" "),_c('span',[_vm._v("&")])]):_vm._e(),_vm._v(" "),_c('a',{attrs:{"href":"https://github.com/meteorlxy/vssue","title":("Vssue v" + (_vm.vssue.version)),"target":"_blank","rel":"noopener noreferrer"}},[_vm._v("\n      Vssue\n    ")])])])};
+          : _vm.vssue.$tc('comments', 0))+"\n    ")])])])};
 var __vue_staticRenderFns__$8 = [];
 
   /* style */
@@ -1183,6 +1183,49 @@ const messages$1 = {
 
 const messages$2 = {
     // auth
+    login: '使用 {platform} 登入',
+    logout: '登出',
+    currentUser: '當前用戶',
+    // comment input
+    loading: '載入中',
+    submit: '提交',
+    submitting: '發表中',
+    submitComment: '發表評論',
+    cancel: '取消',
+    edit: '編輯',
+    editMode: '編輯模式',
+    delete: '刪除',
+    reply: '回覆',
+    // reactions
+    heart: '喜歡',
+    like: '贊',
+    unlike: '踩',
+    // pagination
+    perPage: '每頁評論數',
+    sort: '點擊改變排序方式',
+    page: '頁數',
+    prev: '上一頁',
+    next: '下一頁',
+    // hint
+    comments: '評論 | {count} 條評論 | {count} 條評論',
+    loginToComment: '使用 {platform} 帳號登入後發表評論',
+    placeholder: '留下你的評論丨支持 Markdown 語法丨Ctrl + Enter 發表評論',
+    noLoginPlaceHolder: '登入後才能發表評論丨支持 Markdown 語法',
+    // status
+    failed: '評論加載失敗',
+    initializing: '正在初始化...',
+    issueNotCreated: '點擊創建 Issue',
+    loadingComments: '正在加載評論...',
+    loginRequired: '登入後查看評論',
+    noComments: '還沒有評論，來發表第一條評論吧！',
+    // alerts
+    reactionGiven: `已經點擊過 '{reaction}' 了`,
+    deleteConfirm: '確認要刪除該評論嗎？',
+    deleteFailed: '評論刪除失敗',
+};
+
+const messages$3 = {
+    // auth
     login: 'Entrar com {platform}',
     logout: 'Sair',
     currentUser: 'Usuário Atual',
@@ -1224,7 +1267,7 @@ const messages$2 = {
     deleteFailed: 'Falha ao apagar comentário',
 };
 
-const messages$3 = {
+const messages$4 = {
     // auth
     login: '{platform} でログイン',
     logout: 'ログアウト',
@@ -1267,7 +1310,7 @@ const messages$3 = {
     deleteFailed: 'コメントの削除に失敗しました',
 };
 
-const messages$4 = {
+const messages$5 = {
     // auth
     login: 'התחברו עם {platform}',
     logout: 'התנתקו',
@@ -1310,6 +1353,92 @@ const messages$4 = {
     deleteFailed: 'כשלון במחיקת התגובה',
 };
 
+const messages$6 = {
+    // auth
+    login: '{platform} 로그인',
+    logout: '로그아웃',
+    currentUser: '현재 유저',
+    // comment input
+    loading: '로딩중',
+    submit: '등록',
+    submitting: '등록중',
+    submitComment: '댓글 등록',
+    cancel: '취소',
+    edit: '편집',
+    editMode: '편집 모드',
+    delete: '삭제',
+    reply: '회신',
+    // reactions
+    heart: '하트',
+    like: '좋아요',
+    unlike: '싫어요',
+    // pagination
+    perPage: '댓글 / 페이지',
+    sort: '클릭하여 정렬 방식 변경',
+    page: '페이지',
+    prev: '이전 페이지',
+    next: '다음 페이지',
+    // hint
+    comments: '댓글 | {count}개의 댓글 | {count}개의 댓글',
+    loginToComment: '댓글을 남기려면 {platform} 로그인이 필요합니다.',
+    placeholder: '댓글을 입력해주세요. 마크다운 문법을 지원합니다. Ctrl + Enter 단축키로 등록됩니다.',
+    noLoginPlaceHolder: '로그인 후 댓글을 남겨주세요. 마크다운 문법을 지원합니다.',
+    // status
+    failed: '댓글 불러오기에 실패하였습니다',
+    initializing: '초기화중...',
+    issueNotCreated: '클릭하여 새 이슈를 생성합니다',
+    loadingComments: '댓글을 불러오는 중입니다...',
+    loginRequired: '댓글을 보려면 로그인이 필요합니다',
+    noComments: '댓글이 하나도 없습니다. 첫 댓글을 남겨보세요!',
+    // alerts
+    reactionGiven: `이미 '{reaction}' 반응을 남겼습니다`,
+    deleteConfirm: '정말 댓글을 삭제하시겠습니까?',
+    deleteFailed: '댓글 삭제에 실패하였습니다',
+};
+
+const messages$7 = {
+    // auth
+    login: 'Se connecter avec {platform}',
+    logout: 'Se déconnecter',
+    currentUser: 'Utilisateur actuel',
+    // comment input
+    loading: 'Chargement',
+    submit: 'Poster',
+    submitting: "En cours d'envoi",
+    submitComment: 'Ajouter un commentaire',
+    cancel: 'Annuler',
+    edit: 'Éditer',
+    editMode: 'Mode édition',
+    delete: 'Supprimer',
+    reply: 'Répondre',
+    // reactions
+    heart: 'Adorer',
+    like: 'Approuver',
+    unlike: 'Désapprouver',
+    // pagination
+    perPage: 'Commentaires par pages',
+    sort: "Cliquez pour changer l'ordre de tri",
+    page: 'Page',
+    prev: 'Page précédente',
+    next: 'Page suivante',
+    // hint
+    comments: 'Commentaires | {count} Commentaires | {count} Commentaires',
+    loginToComment: 'Se connecter avec votre compte {platform} pour laisser un commentaire',
+    placeholder: 'Laisser un commentaire. Le Markdown est supporté. Ctrl + Enter pour poster.',
+    noLoginPlaceHolder: 'Connectez-vous pour laisser un commentaire. Le Markdown est supporté. ',
+    // status
+    failed: 'Impossible de charger les commentaires',
+    initializing: 'Initialisation...',
+    issueNotCreated: 'Cliquez pour créer un commentaire',
+    loadingComments: 'Chargment des commentaires...',
+    loginRequired: 'Se connecter pour voir les commentaires',
+    noComments: "Il n'y a pas de commentaire pour le moment. Laissez le premier commentaire !",
+    // alerts
+    reactionGiven: `Réaction '{reaction}' déjà donnée`,
+    deleteConfirm: 'Voulez-vous vraiment supprimer ce commentaire?',
+    deleteFailed: 'Impossible de créer le commentaire',
+};
+
 if (!Object.prototype.hasOwnProperty.call(Vue, '$i18n')) {
     Vue.use(VueI18n);
 }
@@ -1321,12 +1450,17 @@ const i18n = new VueI18n({
         'en-US': messages,
         zh: messages$1,
         'zh-CN': messages$1,
-        pt: messages$2,
-        'pt-BR': messages$2,
-        ja: messages$3,
-        'ja-JP': messages$3,
-        he: messages$4,
-        'he-IL': messages$4,
+        'zh-TW': messages$2,
+        pt: messages$3,
+        'pt-BR': messages$3,
+        ja: messages$4,
+        'ja-JP': messages$4,
+        he: messages$5,
+        'he-IL': messages$5,
+        ko: messages$6,
+        'ko-KR': messages$6,
+        fr: messages$7,
+        'fr-FR': messages$7,
     },
 });
 
@@ -1714,6 +1848,8 @@ let VssueStore = class VssueStore extends Vue$1 {
     login() {
         if (!this.API)
             return;
+        localStorage.setItem('curURL', window.location.href);
+        localStorage.setItem('focus', true);
         this.API.redirectAuth();
     }
     /**
@@ -1797,6 +1933,7 @@ let Vssue = class Vssue extends Vue$1 {
      */
     mounted() {
         // set issue title and issue id
+        console.log(this.title, this.issueId, 99);
         if (this.title !== null) {
             this.vssue.title = this.title;
         }

@@ -466,6 +466,8 @@ class VssueStore extends Vue implements Vssue.Store {
    */
   login(): void {
     if (!this.API) return;
+    localStorage.setItem('curURL', window.location.href);
+    localStorage.setItem('focus', true);
     this.API.redirectAuth();
   }
 

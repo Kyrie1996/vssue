@@ -61,7 +61,6 @@ export default class GitlabV4 implements VssueAPI.Instance {
 
     // @see https://docs.gitlab.com/ce/api/README.html#namespaced-path-encoding
     this._encodedRepo = encodeURIComponent(`${this.owner}/${this.repo}`);
-
     this.$http = axios.create({
       baseURL: concatURL(baseURL, 'api/v4'),
       headers: {
@@ -95,7 +94,7 @@ export default class GitlabV4 implements VssueAPI.Instance {
       concatURL(this.baseURL, 'oauth/authorize'),
       {
         client_id: this.clientId,
-        redirect_uri: window.location.href,
+        redirect_uri: window.location.href.split('#')[0],
         response_type: 'token',
         state: this.state,
       }
@@ -111,7 +110,7 @@ export default class GitlabV4 implements VssueAPI.Instance {
    * If the `access_token` and `state` exist in the query, and the `state` matches, remove them from query, and return the access token.
    */
   async handleAuth(): Promise<VssueAPI.AccessToken> {
-    const hash = parseQuery(window.location.hash.slice(1));
+    const hash = parseQuery(window.location.hash.slice(2));
     if (!hash.access_token || hash.state !== this.state) {
       return null;
     }
@@ -122,7 +121,7 @@ export default class GitlabV4 implements VssueAPI.Instance {
     delete hash.state;
     const hashString = buildQuery(hash);
     const newHash = hashString ? `#${hashString}` : '';
-    const replaceURL = `${getCleanURL(window.location.href)}${
+    const replaceURL = `${getCleanURL(window.location.href.split('#')[0])}${
       window.location.search
     }${newHash}`;
     window.history.replaceState(null, '', replaceURL);

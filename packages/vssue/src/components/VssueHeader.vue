@@ -19,7 +19,7 @@
     </a>
 
     <!-- powered-by - platform and vssue -->
-    <span class="vssue-header-powered-by">
+    <!-- <span class="vssue-header-powered-by">
       <span>Powered by</span>
 
       <span v-if="vssue.API">
@@ -45,7 +45,7 @@
       >
         Vssue
       </a>
-    </span>
+    </span> -->
   </div>
 </template>
 
