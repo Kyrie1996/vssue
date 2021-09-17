@@ -69,11 +69,7 @@ class VssueStore extends Vue implements Vssue.Store {
 
   get isAdmin(): boolean {
     return (
-      this.options !== null &&
-      this.accessToken !== null &&
-      this.user !== null &&
-      (this.user.username === this.options.owner ||
-        this.options.admins.includes(this.user.username))
+      this.options !== null && this.accessToken !== null && this.user !== null
     );
   }
 
