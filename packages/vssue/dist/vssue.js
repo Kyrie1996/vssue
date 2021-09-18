@@ -1929,7 +1929,6 @@ let Vssue = class Vssue extends Vue$1 {
      */
     mounted() {
         // set issue title and issue id
-        console.log(this.title, this.issueId, 99);
         if (this.title !== null) {
             this.vssue.title = this.title;
         }

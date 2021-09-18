@@ -264,7 +264,6 @@ class VssueStore extends Vue implements Vssue.Store {
 
     try {
       this.isCreatingIssue = true;
-
       const issue = await this.API.postIssue({
         title: this.issueTitle,
         content: await this.options.issueContent({

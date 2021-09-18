@@ -66,7 +66,6 @@ export default class Vssue extends Vue {
    */
   mounted(): void {
     // set issue title and issue id
-    console.log(this.title, this.issueId, 99);
     if (this.title !== null) {
       this.vssue.title = this.title;
     }
