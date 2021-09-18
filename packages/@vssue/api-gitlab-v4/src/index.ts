@@ -213,7 +213,6 @@ export default class GitlabV4 implements VssueAPI.Instance {
     title: string;
     content: string;
   }): Promise<VssueAPI.Issue> {
-    console.log(111, title, content, window.location.href);
     const { data } = await this.$http.post<ResponseIssue>(
       `projects/${this._encodedRepo}/issues`,
       {
